@@ -74,8 +74,9 @@ and open the template in the editor.
 }
 
 .ic-form{
-    float: left;
     color: #FF4A1E;
+    position: relative;
+    bottom: -5px;
 }
 
 .ic-input{

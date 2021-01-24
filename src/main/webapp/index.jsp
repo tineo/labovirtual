@@ -1,10 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<jsp:forward page="login"></jsp:forward>
+<!--<html>
     <head>
         <title>Title</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">   	
         <link href="./css/login.css" rel="stylesheet" type="text/css">
-        <script src="js/bootstrap.min.js"></script>   
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>   
     </head>
     <body>
         <div class="row m-0 h-100 bg-auth">
@@ -33,7 +36,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-9">
                                                     <div class="form-group">
-                                                        <label for="user">Usuario</label>
+                                                        <label for="user"><i class="fas fa-user mr-2 mt-1 ic-form"></i>Usuario:</label>
                                                         <input type="text" class="form-control" id="user" placeholder="Ingresar usuario">
                                                     </div>
                                                 </div>
@@ -41,8 +44,8 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-9">
                                                     <div class="form-group">
-                                                        <label for="password">ContraseÃ±a:</label>
-                                                        <input type="password" class="form-control" id="password" placeholder="Ingresar contraseÃ±a">
+                                                        <label for="password"><i class="fas fa-lock mr-2 mt-1 ic-form"></i>Contraseña:</label>
+                                                        <input type="password" class="form-control" id="password" placeholder="Ingresar contraseña">
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,4 +68,4 @@
             </div>
         </div>
     </body>
-</html>
+</html>-->
