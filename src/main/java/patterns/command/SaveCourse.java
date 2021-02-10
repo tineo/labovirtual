@@ -1,0 +1,23 @@
+package app.patterns.command;
+
+import app.model.AbstractCourse;
+import app.model.Course;
+import app.repository.dao.design.ICourseDao;
+import app.repository.dao.implement.CourseDaoImpl;
+
+public class SaveCourse implements IOperation {
+
+	private ICourseDao courseDao = new CourseDaoImpl();
+	private String title;
+
+	public SaveCourse (String title) {
+		this.title = title;
+	}
+
+	@Override
+	public void save() {
+		Course course = new Course();
+		course.setTitle(title);
+		courseDao.saveNewCourse(course);
+	}
+}
