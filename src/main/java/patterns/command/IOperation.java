@@ -1,6 +1,4 @@
-package app.patterns.command;
-
-import app.model.AbstractCourse;
+package patterns.command;
 
 public interface IOperation {
 

@@ -1,6 +1,6 @@
-package app.patterns.factory;
+package patterns.factory;
 
-import app.model.UserDao;
+import model.UserDao;
 
 public class AdministratorDao implements ILogin {
 	@Override

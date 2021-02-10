@@ -1,7 +1,7 @@
-package app.patterns.factory;
+package patterns.factory;
 
-import app.model.User;
-import app.model.UserDao;
+import model.User;
+import model.UserDao;
 
 public interface ILogin {
 

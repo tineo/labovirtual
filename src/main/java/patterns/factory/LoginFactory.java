@@ -1,4 +1,4 @@
-package app.patterns.factory;
+package patterns.factory;
 
 public class LoginFactory {
 

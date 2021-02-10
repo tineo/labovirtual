@@ -1,9 +1,9 @@
-package app.patterns.factory;
+package patterns.factory;
 
-import app.model.User;
-import app.model.UserDao;
-import app.repository.dao.design.ITeacherDao;
-import app.repository.dao.implement.TeacherDaoImpl;
+import model.User;
+import model.UserDao;
+import repository.dao.design.ITeacherDao;
+import repository.dao.implement.TeacherDaoImpl;
 
 public class TeacherDao implements ILogin{
 

@@ -1,4 +1,4 @@
-package app.patterns.command;
+package patterns.command;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package app.patterns.command;
+package patterns.command;
 
-import app.model.AbstractCourse;
-import app.model.Course;
-import app.repository.dao.design.ICourseDao;
-import app.repository.dao.implement.CourseDaoImpl;
+import model.AbstractCourse;
+import model.Course;
+import repository.dao.design.ICourseDao;
+import repository.dao.implement.CourseDaoImpl;
 
 public class SaveCourse implements IOperation {
 
