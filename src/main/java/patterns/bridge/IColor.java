@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package patterns.iterator;
+package bridge.patron;
 
 /**
  *
- * @author GERSON
+ * @author Usuario
  */
-public interface Iterator {
-    public Object first();
-    public Object next();
-    public boolean hasMore();
-    public Object current();
+public interface IColor {
+    void fillWithColor(int border);
 }
