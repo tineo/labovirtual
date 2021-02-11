@@ -18,18 +18,18 @@ import java.util.ArrayList;
  */
 @DisplayName("Testing -  Chain of Responsibility pattern")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class MessagingTest {
+class MessagingTest {
 
     @Test
     @DisplayName("Handler for public messages")
-    protected void testPublicHandler() {
+    void testPublicHandler() {
         AbstractMessageHandler.reviewMessageRequest(new Message());
         assertEquals("public", AbstractMessageHandler.getHandledBy());
     }
 
     @Test
     @DisplayName("Handler for private messages")
-    protected void testPrivateHandler() {
+    void testPrivateHandler() {
         Message message = new Message();
         message.setReceivers(new ArrayList<User>() {{ add(new User()); }});
         AbstractMessageHandler.reviewMessageRequest(message);
@@ -38,7 +38,7 @@ public class MessagingTest {
 
     @Test
     @DisplayName("Handler for group messages")
-    protected void testGroupHandler() {
+    void testGroupHandler() {
         Message message = new Message();
         message.setReceivers(new ArrayList<User>() {{ add(new User()); add(new User()); }});
         AbstractMessageHandler.reviewMessageRequest(message);
@@ -48,7 +48,7 @@ public class MessagingTest {
 
     @Test
     @DisplayName("Handler for private messages with text")
-    protected void testPrivateHandlerWithText() {
+    void testPrivateHandlerWithText() {
         Message message = new Message();
         message.setText("Hola Usuario");
         message.setReceivers(new ArrayList<User>() {{ add(new User()); }});
@@ -58,7 +58,7 @@ public class MessagingTest {
 
     @Test
     @DisplayName("Handler for public messages with text")
-    protected void testPublicHandlerWithText() {
+    void testPublicHandlerWithText() {
         Message message = new Message();
         message.setText("Hola a todos");
         AbstractMessageHandler.reviewMessageRequest(message);
@@ -67,7 +67,7 @@ public class MessagingTest {
 
     @Test
     @DisplayName("Handler for group messages with text")
-    protected void testGroupHandlerWithText() {
+    void testGroupHandlerWithText() {
         Message message = new Message();
         message.setText("Hola grupo");
         message.setReceivers(new ArrayList<User>() {{ add(new User()); add(new User()); }});
