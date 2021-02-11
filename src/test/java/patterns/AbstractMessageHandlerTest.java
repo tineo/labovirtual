@@ -3,10 +3,10 @@ package patterns;
 
 import model.Message;
 import model.User;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import patterns.chain_of_resp.AbstractMessageHandler;
 
 import java.util.ArrayList;
@@ -20,12 +20,13 @@ import java.util.List;
  * @author CESAR
  */
 @DisplayName("Testing -  Chain of Responsibility pattern")
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AbstractMessageHandlerTest {
     private Message message;
-    private List<User> receivers;
+    private ArrayList<User> receivers;
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setup() {
         message  = new Message();
         receivers = new ArrayList<>();
     }
