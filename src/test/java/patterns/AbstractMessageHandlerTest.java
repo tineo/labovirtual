@@ -22,14 +22,14 @@ public class AbstractMessageHandlerTest {
 
     @Test
     @DisplayName("Handler for public messages")
-    public void testPublicHandler() {
+    protected void testPublicHandler() {
         AbstractMessageHandler.reviewMessageRequest(new Message());
         assertEquals("public", AbstractMessageHandler.getHandledBy());
     }
 
     @Test
     @DisplayName("Handler for private messages")
-    public void testPrivateHandler() {
+    protected void testPrivateHandler() {
         Message message = new Message();
         message.setReceivers(new ArrayList<User>() {{ add(new User()); }});
         AbstractMessageHandler.reviewMessageRequest(message);
@@ -38,7 +38,7 @@ public class AbstractMessageHandlerTest {
 
     @Test
     @DisplayName("Handler for group messages")
-    public void testGroupHandler() {
+    protected void testGroupHandler() {
         Message message = new Message();
         message.setReceivers(new ArrayList<User>() {{ add(new User()); add(new User()); }});
         AbstractMessageHandler.reviewMessageRequest(message);
