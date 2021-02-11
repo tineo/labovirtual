@@ -1,6 +1,3 @@
-package patterns;
-
-
 import model.Message;
 import model.User;
 import org.junit.jupiter.api.*;
