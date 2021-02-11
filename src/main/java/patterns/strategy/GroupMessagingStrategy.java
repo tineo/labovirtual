@@ -10,11 +10,12 @@ public class GroupMessagingStrategy extends DeliveryMessagingStrategy{
     boolean checkMessage(Message message) {
         boolean isCorrect = false;
         if(message.getReceivers().size() > 1){
-                if(!message.getText().equals("")){
-                    isCorrect = true;
-                }else{
-                    System.out.println("Mensaje vacio");
-                }
+            if(message.getText() != null && !message.getText().equals("")){
+                System.out.println("Mensaje a enviar: "+message.getText());
+                isCorrect = true;
+            }else{
+                System.out.println("Mensaje vacio");
+            }
         }
         return isCorrect;
     }
