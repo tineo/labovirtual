@@ -23,11 +23,10 @@ public class Course extends AbstractCourse implements ICloneable {
 	private List<CourseModule> courseModuleList;
 
 	@Override
-	public ICloneable clone() {
+	public ICloneable clonar() {
 		Course course = null;
-
-		course = (Course) clone();
-
+		course = (Course) clonar();
 		return course;
 	}
+
 }
