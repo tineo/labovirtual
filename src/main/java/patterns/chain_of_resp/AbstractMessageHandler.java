@@ -1,10 +1,6 @@
 package patterns.chain_of_resp;
 
 import model.Message;
-import patterns.strategy.GroupMessagingStrategy;
-import patterns.strategy.MessagingStrategy;
-import patterns.strategy.PrivateMessagingStrategy;
-import patterns.strategy.PublicMessagingStrategy;
 
 /**
  *

@@ -2,7 +2,6 @@ package patterns.chain_of_resp;
 
 import model.Message;
 import patterns.strategy.DeliveryMessagingStrategy;
-import patterns.strategy.GroupMessagingStrategy;
 import patterns.strategy.PrivateMessagingStrategy;
 
 /**

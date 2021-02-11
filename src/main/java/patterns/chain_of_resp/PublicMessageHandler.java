@@ -2,7 +2,6 @@ package patterns.chain_of_resp;
 
 import model.Message;
 import patterns.strategy.DeliveryMessagingStrategy;
-import patterns.strategy.PrivateMessagingStrategy;
 import patterns.strategy.PublicMessagingStrategy;
 
 /**
@@ -13,7 +12,7 @@ public class PublicMessageHandler extends AbstractMessageHandler{
 
     @Override
     protected boolean isApplicable(Message message) {
-        return (message.getReceivers()==null || message.getReceivers().size()==0);
+        return (message.getReceivers()==null || message.getReceivers().isEmpty());
     }
 
     @Override
