@@ -1,16 +1,18 @@
 package patterns;
 
-import static org.junit.Assert.*;
 
 import model.Message;
 import model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import patterns.chain_of_resp.AbstractMessageHandler;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 /**
  * Demonstrates use of Chain of Responsibility pattern.
