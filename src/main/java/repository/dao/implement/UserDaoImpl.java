@@ -1,5 +1,6 @@
 package repository.dao.implement;
 
+import model.User;
 import repository.dao.design.IUserDao;
 import repository.daoDataSource.CloseResources;
 import repository.daoDataSource.DataSourceDao;
@@ -81,6 +82,11 @@ public class UserDaoImpl implements IUserDao {
 			CloseResources.closeResources(preparedStatement, resultSet);
 		}
 		return userDataDto;
+	}
+
+	@Override
+	public User[] getAllActiveUsers() {
+		return new User[0];
 	}
 
 }

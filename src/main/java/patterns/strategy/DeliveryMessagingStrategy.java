@@ -7,7 +7,8 @@ public abstract class DeliveryMessagingStrategy implements MessagingStrategy{
     @Override
     public void process(Message message) {
         if (checkMessage(message)){
-            if(send(message)) notify(message);
+            send(message);
+            notify(message);
         }
     }
 

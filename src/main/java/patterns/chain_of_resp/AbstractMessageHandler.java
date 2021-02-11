@@ -1,6 +1,10 @@
 package patterns.chain_of_resp;
 
 import model.Message;
+import patterns.strategy.GroupMessagingStrategy;
+import patterns.strategy.MessagingStrategy;
+import patterns.strategy.PrivateMessagingStrategy;
+import patterns.strategy.PublicMessagingStrategy;
 
 /**
  *
@@ -33,7 +37,8 @@ public abstract class AbstractMessageHandler implements MessageHandler{
     public void processHandler(Message message) {
 
         if (isApplicable(message)) {
-            handledBy = reviewMessage(message);
+            handledBy = processMessage(message);
+
         } else {
             if (null != nextHandler) {
                 nextHandler.processHandler(message);
@@ -47,6 +52,6 @@ public abstract class AbstractMessageHandler implements MessageHandler{
 
     protected abstract boolean isApplicable(Message message);
 
-    protected abstract String reviewMessage(Message message);
+    protected abstract String processMessage(Message message);
 
 }

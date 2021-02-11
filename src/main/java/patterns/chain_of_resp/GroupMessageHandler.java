@@ -1,6 +1,8 @@
 package patterns.chain_of_resp;
 
 import model.Message;
+import patterns.strategy.DeliveryMessagingStrategy;
+import patterns.strategy.GroupMessagingStrategy;
 
 /**
  *
@@ -14,7 +16,9 @@ public class GroupMessageHandler extends AbstractMessageHandler{
     }
 
     @Override
-    protected String reviewMessage(Message message) {
+    protected String processMessage(Message message) {
+        DeliveryMessagingStrategy deliveryMessagingStrategy = new GroupMessagingStrategy();
+        deliveryMessagingStrategy.process(message);
         return "group";
     }
 }
