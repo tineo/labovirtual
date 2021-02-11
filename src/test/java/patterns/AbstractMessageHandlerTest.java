@@ -10,9 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import patterns.chain_of_resp.AbstractMessageHandler;
 
 import java.util.ArrayList;
-import java.util.List;
-
-
 
 /**
  * Demonstrates use of Chain of Responsibility pattern.
@@ -22,27 +19,19 @@ import java.util.List;
 @DisplayName("Testing -  Chain of Responsibility pattern")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AbstractMessageHandlerTest {
-    private Message message;
-    private ArrayList<User> receivers;
-
-    @BeforeEach
-    public void setup() {
-        message  = new Message();
-        receivers = new ArrayList<>();
-    }
 
     @Test
     @DisplayName("Handler for public messages")
     public void testPublicHandler() {
-        AbstractMessageHandler.reviewMessageRequest(message);
+        AbstractMessageHandler.reviewMessageRequest(new Message());
         assertEquals("public", AbstractMessageHandler.getHandledBy());
     }
 
     @Test
     @DisplayName("Handler for private messages")
     public void testPrivateHandler() {
-        receivers.add(new User());
-        message.setReceivers(receivers);
+        Message message = new Message();
+        message.setReceivers(new ArrayList<User>() {{ add(new User()); }});
         AbstractMessageHandler.reviewMessageRequest(message);
         assertEquals("private", AbstractMessageHandler.getHandledBy());
     }
@@ -50,9 +39,8 @@ public class AbstractMessageHandlerTest {
     @Test
     @DisplayName("Handler for group messages")
     public void testGroupHandler() {
-        receivers.add(new User());
-        receivers.add(new User());
-        message.setReceivers(receivers);
+        Message message = new Message();
+        message.setReceivers(new ArrayList<User>() {{ add(new User()); add(new User()); }});
         AbstractMessageHandler.reviewMessageRequest(message);
         assertEquals("group", AbstractMessageHandler.getHandledBy());
 

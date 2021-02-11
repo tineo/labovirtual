@@ -17,14 +17,12 @@ public abstract class AbstractMessageHandler implements MessageHandler{
         final MessageHandler privateMessageHandler = new PrivateMessageHandler();
         final MessageHandler groupMessageHandler = new GroupMessageHandler();
 
-
         publicMessageHandler.setNextHandler(privateMessageHandler);
         privateMessageHandler.setNextHandler(groupMessageHandler);
         groupMessageHandler.setNextHandler(null);
 
         publicMessageHandler.processHandler(message);
     }
-
 
     @Override
     public void setNextHandler(MessageHandler handler) {
@@ -33,7 +31,6 @@ public abstract class AbstractMessageHandler implements MessageHandler{
 
     @Override
     public void processHandler(Message message) {
-
 
         if (isApplicable(message)) {
             handledBy = reviewMessage(message);
