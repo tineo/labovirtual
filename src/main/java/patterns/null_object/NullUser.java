@@ -13,12 +13,12 @@ public class NullUser implements User{
 
     @Override
     public String getName() {
-        return null;
+        return "";
     }
 
     @Override
     public String getLast_name() {
-        return null;
+        return "";
     }
 
     @Override
