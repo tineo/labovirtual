@@ -16,14 +16,8 @@ public abstract class AbstractMessageHandler implements MessageHandler{
         final MessageHandler publicMessageHandler = new PublicMessageHandler();
         final MessageHandler privateMessageHandler = new PrivateMessageHandler();
         final MessageHandler groupMessageHandler = new GroupMessageHandler();
-        //final MessageHandler salesReviewHandler = new SalesReviewHandler();
-        //final MessageHandler engineeringReviewHandler = new EngineeringReviewHandler();
-        //final MessageHandler testingReviewHandler = new TestingReviewHandler();
 
-        //supportReviewHandler.setNextHandler(salesReviewHandler);
-        //salesReviewHandler.setNextHandler(engineeringReviewHandler);
-        //engineeringReviewHandler.setNextHandler(testingReviewHandler);
-        //testingReviewHandler.setNextHandler(null);
+
         publicMessageHandler.setNextHandler(privateMessageHandler);
         privateMessageHandler.setNextHandler(groupMessageHandler);
         groupMessageHandler.setNextHandler(null);
