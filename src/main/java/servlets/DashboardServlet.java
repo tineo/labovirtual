@@ -45,7 +45,6 @@ public class DashboardServlet extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -57,7 +56,12 @@ public class DashboardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("dashboard/index.jsp").forward(request,response);
+        try {
+            request.getRequestDispatcher("dashboard/index.jsp").forward(request,response);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+
     }
 
     /**
@@ -71,7 +75,11 @@ public class DashboardServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
     }
 
     /**
@@ -81,7 +89,7 @@ public class DashboardServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Servlet de dashboard";
+    }
 
 }

@@ -57,7 +57,11 @@ public class ContentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("content/index.jsp").forward(request,response);
+        try {
+            request.getRequestDispatcher("content/index.jsp").forward(request,response);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
     }
 
     /**
@@ -71,7 +75,12 @@ public class ContentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+
     }
 
     /**
@@ -81,7 +90,7 @@ public class ContentServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Servlet de Contenido de curso";
+    }
 
 }
