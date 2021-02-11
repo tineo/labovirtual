@@ -11,7 +11,7 @@ public class PublicMessagingStrategy extends DeliveryMessagingStrategy{
     @Override
     boolean checkMessage(Message message) {
         boolean isCorrect = false;
-        if(message.getReceivers() == null || message.getReceivers().size() == 0){
+        if(message.getReceivers() == null || message.getReceivers().isEmpty()){
             if(message.getText() != null && !message.getText().equals("")){
                 System.out.println("Mensaje a enviar: "+message.getText());
                 isCorrect = true;
